@@ -1,0 +1,24 @@
+.marco {
+  color: white;
+  text-align: center;
+  background-color: rgba(213, 213, 213, 0.622);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 25px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 10px;
+}
+
+.marco_individual {
+  background-color: rgba(213, 213, 213, 0.622);
+  border-radius: 15px;
+  width: 52%;
+
+  color: black;
+}

@@ -1,0 +1,52 @@
+.imgWeather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  height: 50vh;
+  border-radius: 25px;
+  color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+.nubes {
+  background-image: url("/assets/images/nubes.jpg");
+}
+.sol {
+  background-image: url("/assets/images/sol.jpg");
+}
+.lluvia {
+  background-image: url("/assets/images/lluvia.jpg");
+}
+.rayos {
+  background-image: url("/assets/images/rayos.jpg");
+}
+.snowing {
+  background-image: url("/assets/images/snowing.jpg");
+}
+
+.marcos {
+  background-color: rgba(213, 213, 213, 0.622);
+  border-radius: 25px;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  width: 19% !important;
+  color: black;
+}
+
+@media (max-width: 800px) {
+  .imgWeather {
+    height: 90vh;
+  }
+  .marcos {
+    width: 41% !important;
+  }
+}
