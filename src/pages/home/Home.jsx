@@ -41,9 +41,6 @@ export const Home = () => {
       });
   };
 
-  let diaActual = weather && weather.lista && weather.lista[0];
-
-  // let pronostico = weather.lista.slice(1, weather.lista.length);
   return (
     <>
       <Col className="HomeCol">
@@ -59,9 +56,7 @@ export const Home = () => {
             <img src="/assets/images/lupa.png" alt="lupa" onClick={onSubmit} />
           </div>
         </div>
-        {/* {weather && <Today weather={weather} city={city} />}
-        {weather && <h2 className="proximo">Próximos días</h2>}
-        {weather && <Proximo weather={weather} />} */}
+
         {weather && (
           <>
             <Today weather={weather} city={city} />
