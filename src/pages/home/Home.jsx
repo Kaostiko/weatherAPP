@@ -31,7 +31,7 @@ export const Home = () => {
     // hacemos petición API
     axios
       .get(
-        `http://api.openweathermap.org/data/2.5/forecast/?q=${city}&units=metric&appid=${ApiKey}`
+        `https://api.openweathermap.org/data/2.5/forecast/?q=${city}&units=metric&appid=${ApiKey}`
       )
       .then((res) => {
         setWeather(prepareData(res.data));
