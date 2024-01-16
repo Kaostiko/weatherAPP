@@ -16,6 +16,8 @@ export const Home = () => {
 
     temp = {
       ...temp,
+      lat: data.city.coord.lat,
+      lon: data.city.coord.lon,
       name: data.city.name,
       lista: res,
     };

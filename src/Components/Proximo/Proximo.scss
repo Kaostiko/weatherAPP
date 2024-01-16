@@ -18,7 +18,10 @@
 .marco_individual {
   background-color: rgba(213, 213, 213, 0.622);
   border-radius: 15px;
-  width: 52%;
-
+  width: 55%;
   color: black;
+}
+
+.marco_individual:hover {
+  background-color: rgba(255, 254, 254, 0.868);
 }

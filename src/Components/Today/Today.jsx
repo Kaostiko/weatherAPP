@@ -8,6 +8,7 @@ export const Today = ({ weather }) => {
   let diaActual = weather.lista[0];
 
   console.log("dia Actual", diaActual);
+  console.log("#############################", weather);
 
   const getBackgroundClass = () => {
     switch (diaActual.weather[0].main.toLowerCase()) {
@@ -27,11 +28,15 @@ export const Today = ({ weather }) => {
   return (
     <Row className={`imgWeather  ${getBackgroundClass()}`}>
       <div className="marcos">
+        <h2>{weather.name}</h2>
+      </div>
+      <div className="marcos">
         <h2>{moment.unix(diaActual.dt).tz("Europe/Madrid").format("LL")}</h2>
       </div>
       <div className="marcos">
         <h3>Temperatura:</h3> <h3> {diaActual.main.temp}º</h3>
       </div>
+
       <div className="marcos">
         <h3>Sensación termica:</h3>
         <h3>{diaActual.main.feels_like}º</h3>
