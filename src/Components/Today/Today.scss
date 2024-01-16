@@ -14,23 +14,28 @@
 }
 
 .nubes {
-  background-image: url("/assets/images/nubes.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/assets/images/nubes.jpg");
 }
 .sol {
-  background-image: url("/assets/images/sol.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/assets/images/sol.jpg");
 }
 .lluvia {
-  background-image: url("/assets/images/lluvia.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/assets/images/lluvia.jpg");
 }
 .rayos {
-  background-image: url("/assets/images/rayos.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/assets/images/rayos.jpg");
 }
 .snowing {
-  background-image: url("/assets/images/snowing.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/assets/images/snowing.jpg");
 }
 
 .marcos {
-  background-color: rgba(213, 213, 213, 0.622);
+  background-color: rgba(255, 255, 255, 0.741);
   border-radius: 25px;
   aspect-ratio: 1/1;
   display: flex;
@@ -40,6 +45,9 @@
   height: 120px;
   width: 19% !important;
   color: black;
+  img {
+    height: 80%;
+  }
 }
 .marcos:hover {
   background-color: rgba(255, 254, 254, 0.868);

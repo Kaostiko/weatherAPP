@@ -23,6 +23,24 @@ export const Proximo = ({ weather }) => {
     }
   };
 
+  let sunny = "/assets/icons/sunny.png";
+  let rainy = "/assets/icons/rainy.png";
+  let clouds = "/assets/icons/clouds.png";
+
+  const getIcon = (data) => {
+    switch (data.weather[0].main.toLowerCase()) {
+      case "clouds":
+        return clouds;
+      case "clear":
+        return sunny;
+      case "rain":
+        return rainy;
+      case "thunderstorm":
+        return "thunderstorm";
+      case "snow":
+        return "snow";
+    }
+  };
   return (
     <Row>
       {pronostico.map((data, index) => (
@@ -30,6 +48,9 @@ export const Proximo = ({ weather }) => {
           <section className={`marco ${getBackgroundClass(data)}`}>
             <div className="marco_individual">
               <h5>{moment.unix(data.dt).tz("Europe/Madrid").format("LL")}</h5>
+            </div>
+            <div className="marco_individual">
+              <img src={`${getIcon(data)}`} alt="" />
             </div>
             <div className="marco_individual">
               <h5>Temperatura:</h5> <h5> {data.main.temp}º</h5>

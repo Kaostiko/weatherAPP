@@ -25,6 +25,24 @@ export const Today = ({ weather }) => {
     }
   };
 
+  let sunny = "/assets/icons/sunny.png";
+  let rainy = "/assets/icons/rainy.png";
+  let clouds = "/assets/icons/clouds.png";
+
+  const getIcon = () => {
+    switch (diaActual.weather[0].main.toLowerCase()) {
+      case "clouds":
+        return clouds;
+      case "clear":
+        return sunny;
+      case "rain":
+        return rainy;
+      case "thunderstorm":
+        return "thunderstorm";
+      case "snow":
+        return "snow";
+    }
+  };
   return (
     <Row className={`imgWeather  ${getBackgroundClass()}`}>
       <div className="marcos">
@@ -32,6 +50,9 @@ export const Today = ({ weather }) => {
       </div>
       <div className="marcos">
         <h2>{moment.unix(diaActual.dt).tz("Europe/Madrid").format("LL")}</h2>
+      </div>
+      <div className="marcos">
+        <img src={`${getIcon()}`} alt="" />
       </div>
       <div className="marcos">
         <h3>Temperatura:</h3> <h3> {diaActual.main.temp}º</h3>
