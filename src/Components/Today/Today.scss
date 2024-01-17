@@ -1,16 +1,86 @@
-.imgWeather {
+//EXTEND
+%flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.imgWeather {
+  @extend %flex-center;
   flex-wrap: wrap;
-  gap: 1rem;
-  height: 50vh;
   border-radius: 25px;
   color: white;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
+
+  .todayCol1 {
+    // background-color: red;
+    padding: 20px;
+  }
+
+  .todayCol2 {
+    // background-color: green;
+
+    .sentionNext {
+      background-color: rgba(156, 156, 156, 0.503);
+      border-radius: 25px;
+      max-height: 80%;
+    }
+  }
+}
+
+// Estilos de la primera columna - datos generales del día de hoy
+.mainToday {
+  @extend %flex-center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  .mainBox {
+    max-width: 80%;
+    background-color: rgba(156, 156, 156, 0.503);
+    border-radius: 25px;
+    margin-bottom: 15px;
+    padding: 25px;
+    @extend %flex-center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .mainBoxChild1 {
+      @extend %flex-center;
+      flex-direction: row;
+      gap: 2rem;
+      .mainIcon {
+        max-width: 25%;
+      }
+    }
+    .mainBoxChild2 {
+      @extend %flex-center;
+      gap: 0.5rem;
+    }
+  }
+
+  .indicadores {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 2rem;
+    padding: 15px;
+
+    .regularBox {
+      width: 120px;
+      aspect-ratio: 1/1;
+      background-color: rgba(156, 156, 156, 0.503);
+      border-radius: 25px;
+      margin-bottom: 15px;
+      @extend %flex-center;
+      flex-direction: column;
+      padding: 10px;
+    }
+  }
 }
 
 .nubes {
@@ -34,30 +104,8 @@
     url("/assets/images/snowing.jpg");
 }
 
-.marcos {
-  background-color: rgba(255, 255, 255, 0.741);
-  border-radius: 25px;
-  aspect-ratio: 1/1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 120px;
-  width: 19% !important;
-  color: black;
-  img {
-    height: 80%;
-  }
-}
-.marcos:hover {
-  background-color: rgba(255, 254, 254, 0.868);
-}
-
-@media (max-width: 800px) {
-  .imgWeather {
-    height: 90vh;
-  }
-  .marcos {
-    width: 41% !important;
+@media (max-width: 1025px) {
+  .mainBox {
+    max-width: 80% !important;
   }
 }

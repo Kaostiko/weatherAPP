@@ -8,16 +8,16 @@ import { Proximo } from "../../Components/Proximo/Proximo";
 export const Home = () => {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState();
-  const ApiKey = "d94bcd435b62a031771c35633f9f310a";
 
+  // Preparo los datos para su uso por horas y por días
   const prepareData = (data) => {
     let temp = {};
     let res = data.list.filter((e) => calcHora(e.dt_txt) === "15:00:00");
 
     temp = {
       ...temp,
-      lat: data.city.coord.lat,
-      lon: data.city.coord.lon,
+      city: data.city,
+      hours: data.list,
       name: data.city.name,
       lista: res,
     };
@@ -30,10 +30,12 @@ export const Home = () => {
   };
 
   const onSubmit = () => {
-    // hacemos petición API
+    // hacemos petición API y
     axios
       .get(
-        `https://api.openweathermap.org/data/2.5/forecast/?q=${city}&units=metric&appid=${ApiKey}`
+        `https://api.openweathermap.org/data/2.5/forecast/?q=${city}&units=metric&appid=${
+          import.meta.env.VITE_API_KEY
+        }`
       )
       .then((res) => {
         setWeather(prepareData(res.data));
@@ -43,6 +45,7 @@ export const Home = () => {
       });
   };
 
+  // console.log("WEATHERRRRRRRRRRRRRRRRRRRRRRRRRRRR", weather);
   return (
     <>
       <Col className="HomeCol">
@@ -51,6 +54,7 @@ export const Home = () => {
           <div className="buscador">
             <input
               type="text"
+              id="city"
               value={city}
               className="input_weather"
               onChange={(e) => setCity(e.target.value)}
@@ -62,7 +66,7 @@ export const Home = () => {
         {weather && (
           <>
             <Today weather={weather} city={city} />
-            <h2 className="proximo">Próximos 4 días</h2>
+            <h2 className="proximo">Próximos días</h2>
             <Proximo weather={weather} />
           </>
         )}

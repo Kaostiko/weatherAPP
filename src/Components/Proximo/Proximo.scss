@@ -1,30 +1,45 @@
+//EXTEND
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .marco {
   color: white;
   text-align: center;
-  background-color: rgba(213, 213, 213, 0.622);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 25px;
   padding: 10px;
-  display: flex;
+  @extend %flex-center;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 1rem;
   margin-bottom: 10px;
-}
 
-.marco_individual {
-  background-color: rgba(255, 255, 255, 0.741);
-  border-radius: 15px;
-  width: 55%;
-  color: black;
-  img {
-    width: 40%;
+  .organizador {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1rem;
   }
 }
 
-.marco_individual:hover {
-  background-color: rgba(255, 254, 254, 0.868);
+.marco_individual {
+  height: 122px;
+  aspect-ratio: 1/1;
+  background-color: rgba(156, 156, 156, 0.503);
+  border-radius: 15px;
+  // width: 50%;
+  color: white;
+  @extend %flex-center;
+  flex-direction: column;
+  .titulo {
+    margin-top: -30px;
+    color: rgb(169, 168, 168);
+  }
+  img {
+    width: 40%;
+  }
 }
