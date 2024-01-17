@@ -8,6 +8,7 @@ import { Proximo } from "../../Components/Proximo/Proximo";
 export const Home = () => {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState();
+  const API = "d94bcd435b62a031771c35633f9f310a";
 
   // Preparo los datos para su uso por horas y por días
   const prepareData = (data) => {
@@ -33,9 +34,7 @@ export const Home = () => {
     // hacemos petición API y
     axios
       .get(
-        `https://api.openweathermap.org/data/2.5/forecast/?q=${city}&units=metric&appid=${
-          import.meta.env.VITE_API_KEY
-        }`
+        `https://api.openweathermap.org/data/2.5/forecast/?q=${city}&units=metric&appid=${API}`
       )
       .then((res) => {
         setWeather(prepareData(res.data));
