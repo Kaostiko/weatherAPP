@@ -49,7 +49,34 @@ export const Home = () => {
     <>
       <Col className="HomeCol">
         <div className="header">
-          <img src="/assets/images/logo_tiempo.jpg" alt="" className="logo" />
+          <img
+            src="/assets/images/logo_tiempo.jpg"
+            alt="logo"
+            className="logo"
+          />
+          <a
+            href="https://www.linkedin.com/in/carlos-moran-martinez/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/assets/icons/linkedin.png"
+              alt="linkedin"
+              className="logo2"
+            />
+          </a>
+          <a
+            href="https://carlosmoranmartinez.es/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/assets/icons/web.png"
+              alt="icono web"
+              className="logo2"
+            />
+          </a>
+
           <div className="buscador">
             <input
               type="text"
