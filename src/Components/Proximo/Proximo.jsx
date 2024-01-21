@@ -53,7 +53,7 @@ export const Proximo = ({ weather }) => {
         <Col lg={3} md={6} sm={12} key={index}>
           <section className={`marco ${getBackgroundClass(data)} p-6`}>
             <div className="organizador m-4">
-              <div className="marco_individual">
+              <div className="marco_individual p-3">
                 <h5>{calcDia(data.dt_txt)}</h5>
                 <img src={`${getIcon(data)}`} alt="icono" />
                 <h5> {Math.round(data.main.temp)} º</h5>
@@ -65,11 +65,11 @@ export const Proximo = ({ weather }) => {
             </div>
             <div className="organizador">
               <div className="marco_individual flex flex-row flex-wrap  gap-3 aling-items-center justify-content-center p-3">
-                <h5 className="titulo">Sensación:</h5>
+                <p className="titulo">Sensación:</p>
                 <h5>{Math.round(data.main.feels_like)} º</h5>
-                <h5 className="titulo">Humedad:</h5>
+                <p className="titulo">Humedad:</p>
                 <h5>{Math.round(data.main.humidity)} %</h5>
-                <h5 className="titulo">Viento:</h5>
+                <p className="titulo">Viento:</p>
                 <h5>{data.wind.speed}m/s</h5>
               </div>
             </div>

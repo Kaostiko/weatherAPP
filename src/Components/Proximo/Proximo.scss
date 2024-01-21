@@ -22,13 +22,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    // gap: 1rem;
   }
 }
 
 .marco_individual {
-  // height: 122px;
-  // aspect-ratio: 1/1;
   background-color: rgba(156, 156, 156, 0.503);
   border-radius: 15px;
   width: 100%;
@@ -36,7 +33,7 @@
   @extend %flex-center;
   flex-direction: column;
   .titulo {
-    margin-top: -50px;
+    margin-top: -40px;
     color: rgb(169, 168, 168);
   }
   img {
