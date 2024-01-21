@@ -39,7 +39,7 @@ export const Hours = ({ weather }) => {
   const preparacionData = (data) => {
     let temp = {};
     // let res = data.filter((e) => calcDia(e.dt_txt) === today());
-    let res = data.slice(0, 3);
+    let res = data.slice(0, 6);
 
     temp = {
       ...temp,
@@ -75,13 +75,13 @@ export const Hours = ({ weather }) => {
   // console.log("DATA PREPARADA", dataPreparada);
   console.log("HOURSSSSS", hours);
   return (
-    <Stack gap={3} className="stack">
+    <Stack className="stack">
       <br />
       <h5>Previsión cada 3 horas</h5>
       <hr className="linea" />
       {dataPreparada.horas.map((data, index) => (
         <>
-          <div key={index} className="p-2 horas">
+          <div key={index} className="horas">
             <h3> {calcHora(data.dt_txt)}</h3>
             <img src={getIcon(data.weather[0].main)} className="mainIcon" />
             <h2> {Math.round(data.main.temp)} º</h2>

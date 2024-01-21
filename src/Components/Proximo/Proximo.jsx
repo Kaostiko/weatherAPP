@@ -51,41 +51,24 @@ export const Proximo = ({ weather }) => {
     <Row>
       {pronostico.map((data, index) => (
         <Col lg={3} md={6} sm={12} key={index}>
-          <section className={`marco ${getBackgroundClass(data)}`}>
-            <div className="organizador">
+          <section className={`marco ${getBackgroundClass(data)} p-6`}>
+            <div className="organizador m-4">
               <div className="marco_individual">
                 <h5>{calcDia(data.dt_txt)}</h5>
-              </div>
-              <div className="marco_individual">
                 <img src={`${getIcon(data)}`} alt="icono" />
+                <h5> {Math.round(data.main.temp)} º</h5>
+                <p>
+                  Máx{Math.round(data.main.temp_max)} º - Min:{" "}
+                  {Math.round(data.main.temp_min)} º
+                </p>
               </div>
             </div>
             <div className="organizador">
-              <div className="marco_individual">
-                <h5 className="titulo">Temperatura:</h5>{" "}
-                <h5> {Math.round(data.main.temp)} º</h5>
-              </div>
-              <div className="marco_individual">
+              <div className="marco_individual flex flex-row flex-wrap  gap-3 aling-items-center justify-content-center p-3">
                 <h5 className="titulo">Sensación:</h5>
                 <h5>{Math.round(data.main.feels_like)} º</h5>
-              </div>
-            </div>
-            <div className="organizador">
-              <div className="marco_individual">
-                <h5 className="titulo">Máxima:</h5>
-                <h5>{Math.round(data.main.temp_max)} º</h5>
-              </div>
-              <div className="marco_individual">
-                <h5 className="titulo">Mínima:</h5>
-                <h5>{Math.round(data.main.temp_min)} º</h5>
-              </div>
-            </div>
-            <div className="organizador">
-              <div className="marco_individual">
                 <h5 className="titulo">Humedad:</h5>
                 <h5>{Math.round(data.main.humidity)} %</h5>
-              </div>
-              <div className="marco_individual">
                 <h5 className="titulo">Viento:</h5>
                 <h5>{data.wind.speed}m/s</h5>
               </div>
